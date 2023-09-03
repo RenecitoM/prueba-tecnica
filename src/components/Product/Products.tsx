@@ -21,8 +21,11 @@ const Products = () => {
 
   return (
     <div>
+      <h1 className='text-body-secondary mt-2 mx-2'>Products</h1>
+      <div className='mt-2'>
       <Product product={productData1}/>
       <Product product={productData2}/>
+      </div>
     </div>
   );
 };

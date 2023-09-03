@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-  export const validateCreditCard = (cardNumber: string) => {
+  export const validateCreditCard = (cardNumber) => {
     const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
     const mastercardPattern = /^5[1-5][0-9]{14}$/;
   
@@ -31,7 +31,13 @@ import Swal from 'sweetalert2';
     };
   };
 
-  export const addToCart = (product : any) => ({
+  export const addToCart = (product) => ({
     type: 'ADD_TO_CART',
     product,
   });
+
+  export const resetCart = () => {
+    return {
+      type: 'RESET_CART',
+    };
+  };
