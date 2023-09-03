@@ -13,7 +13,7 @@ const cartReducer = (state = initialState, action) => {
       return initialState;
     case 'REMOVE_FROM_CART':
       const updatedProducts = [...state.selectedProducts];
-      updatedProducts.splice(action.index, 1); // Elimina el elemento en la posición action.index
+      updatedProducts.splice(action.index, 1); 
       return {
         ...state,
         selectedProducts: updatedProducts,
