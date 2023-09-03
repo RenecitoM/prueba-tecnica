@@ -10,7 +10,7 @@ const Payment: React.FC<PaymentProps> = ({ onClose }) => {
   const [cardNumber, setCardNumber] = useState('');
 
   const handlePayment = () => {
-    validateCreditCard( cardNumber );
+    validateCreditCard(cardNumber);
     onClose();
   };
 
