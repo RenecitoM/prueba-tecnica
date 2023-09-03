@@ -12,25 +12,11 @@ const App = () => {
             <li>
               <Link to="/">Product</Link>
             </li>
-            <li>
-              <Link to="/payment">Payment</Link>
-            </li>
-            <li>
-              <Link to="/summary">Summary</Link>
-            </li>
-            <li>
-              <Link to="/final-status">Final Status</Link>
-            </li>
           </ul>
         </nav>
 
         <Routes> 
-          <Route path="" element={<Products/>} />
-
-          <Route path="payment" element={<Payment onClose={function (): void {
-            throw new Error('Function not implemented.');
-          } } />} />
-          
+          <Route path="" element={<Products/>} />         
         </Routes>
       </div>
     </Router>

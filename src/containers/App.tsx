@@ -11,11 +11,7 @@ const App = () => {
       <div className="app">
         <Navbarstep></Navbarstep>
         <Routes>
-          <Route path="/" element={<Products />} />
-          <Route path="/payment" element={<Payment onClose={function (): void {
-            throw new Error('Function not implemented.');
-          } } />} />
-          
+          <Route path="/" element={<Products />} />          
         </Routes>
       </div>
     </Router>

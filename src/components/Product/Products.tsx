@@ -7,7 +7,7 @@ const productData1 = {
   name: 'Apple',
   price: 1.99,
   description: "you grow green apples for all public, rich in vitamins",
-  urlImg: "https://www.semana.com/resizer/aFlCrqRB5tcLkt-aB8oGfRK9VZQ=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/UM4AUXGP25H6NM6CS7UENR32DQ.jpg"
+  urlImg: "https://media.istockphoto.com/id/178395953/es/foto/manzana-verde.jpg?s=612x612&w=0&k=20&c=E5itQ2gQDXYa-3d8QJc-NTJou0d_V4bopSmnMCn6ifc="
 };
 
 const productData2 = {
