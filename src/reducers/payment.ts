@@ -32,7 +32,7 @@ const paymentReducer: Reducer<PaymentState, PaymentAction> = (state = initialSta
       return {
         ...state,
         transactionStatus: 'Payment failed',
-        error: action.payload, // Asignar el payload al error
+        error: action.payload,
       };
     default:
       return state;
