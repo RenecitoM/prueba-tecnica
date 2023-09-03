@@ -8,13 +8,13 @@ import Swal from 'sweetalert2';
       Swal.fire({
         icon: 'success',
         title: 'Valid Visa card',
-        text: 'your purchase has been successful.',
+        text: 'Your purchase has been successful.',
       });
     } else if (mastercardPattern.test(cardNumber)) {
       Swal.fire({
         icon: 'success',
         title: 'Valid Visa card',
-        text: 'your purchase has been successful.',
+        text: 'Your purchase has been successful.',
       });
     } else {
 
