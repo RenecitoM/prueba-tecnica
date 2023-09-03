@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Payment from '../Payment/Payment';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../actions/paymentActions';
+import Swal from 'sweetalert2';
 
 interface ProductProps {
   product: {
@@ -12,17 +15,17 @@ interface ProductProps {
 }
 
 const Product: React.FC<ProductProps> = ({ product }) => {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    setSelectedProduct(product);
-    setShowModal(true);
+    dispatch(addToCart(product));
+    Swal.fire({
+      icon: 'success',
+      title: 'Product added successfully',
+    });
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+
 
   return (
     <>
@@ -39,12 +42,9 @@ const Product: React.FC<ProductProps> = ({ product }) => {
           <p><b>Price: </b>${product.price}</p>
           <p>{product.description.slice(0, 45) + '...'}</p>
           <button className="btn btn-primary" onClick={handleAddToCart}>
-            Pay with credit card
+            ADD
           </button>
         </div>
-        {showModal && (
-          <Payment onClose={handleCloseModal} />
-        )}
       </div>
     </>
   );

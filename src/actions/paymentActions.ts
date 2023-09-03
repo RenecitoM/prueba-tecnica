@@ -7,21 +7,21 @@ import Swal from 'sweetalert2';
     if (visaPattern.test(cardNumber)) {
       Swal.fire({
         icon: 'success',
-        title: 'Tarjeta Visa válida',
-        text: 'El formato del número de tarjeta Visa es válido.',
+        title: 'Valid Visa card',
+        text: 'The Visa card number format is valid.',
       });
     } else if (mastercardPattern.test(cardNumber)) {
       Swal.fire({
         icon: 'success',
-        title: 'Tarjeta MasterCard válida',
-        text: 'El formato del número de tarjeta MasterCard es válido.',
+        title: 'Valid Visa card',
+        text: 'The Visa card number format is valid.',
       });
     } else {
 
       Swal.fire({
         icon: 'error',
-        title: 'Formato de tarjeta no válido',
-        text: 'El formato del número de tarjeta no corresponde a Visa ni MasterCard.',
+        title: 'invalid card format',
+        text: 'The card number format does not correspond to Visa or MasterCard.',
       });
     }
   
@@ -30,3 +30,8 @@ import Swal from 'sweetalert2';
       maskedCardNumber: cardNumber,
     };
   };
+
+  export const addToCart = (product : any) => ({
+    type: 'ADD_TO_CART',
+    product,
+  });
