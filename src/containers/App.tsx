@@ -12,7 +12,9 @@ const App = () => {
         <Navbarstep></Navbarstep>
         <Routes>
           <Route path="/" element={<Products />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<Payment onClose={function (): void {
+            throw new Error('Function not implemented.');
+          } } />} />
           
         </Routes>
       </div>

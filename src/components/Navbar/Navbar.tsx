@@ -1,8 +1,6 @@
 import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
 
 const Navbarstep = () => {
-    const location = useLocation();
 
     return (
         <div>
@@ -17,13 +15,8 @@ const Navbarstep = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <h1 className="navbar-brand">
-                        {location.pathname === "/" ? "Step 1" : location.pathname === "/payment" ? "Step 2" : "Step 3"}
+                        {"Store"}
                     </h1>
-                    {location.pathname !== "/" && (
-                        <Link to="/" className="btn btn-link text-white text-decoration-none">
-                        <span className=''>◀︎</span>
-                    </Link>
-                    )}
                 </div>
             </nav>
         </div>

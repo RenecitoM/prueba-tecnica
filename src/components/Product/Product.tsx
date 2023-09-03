@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Navbarstep from '../Navbar/Navbar';
-import { useNavigate } from 'react-router-dom';
+import Payment from '../Payment/Payment';
+import { useSelector } from 'react-redux';
 
 interface ProductProps {
   product: {
@@ -13,17 +13,22 @@ interface ProductProps {
 
 const Product: React.FC<ProductProps> = ({ product }) => {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const handleAddToCart = () => {
     setSelectedProduct(product);
-    navigate('/payment'); 
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
+    <>
       <div className="card col-5 col-md-5 col-lg-4 col-xl-2 mt-2 mx-2 d-inline-block">
         <img
-          className="card-img-top" style={{objectFit: "cover", maxHeight: "5rem"}}
+          className="card-img-top" style={{ objectFit: "cover", maxHeight: "5rem" }}
           src={product.urlImg}
           alt="Card image cap"
         />
@@ -34,10 +39,14 @@ const Product: React.FC<ProductProps> = ({ product }) => {
           <p><b>Price: </b>${product.price}</p>
           <p>{product.description.slice(0, 45) + '...'}</p>
           <button className="btn btn-primary" onClick={handleAddToCart}>
-            Add to cart
+            Pay with credit card
           </button>
         </div>
+        {showModal && (
+          <Payment onClose={handleCloseModal} />
+        )}
       </div>
+    </>
   );
 };
 

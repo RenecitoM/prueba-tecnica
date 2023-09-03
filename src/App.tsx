@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import Products from './components/Product/Products';
 import Payment from './components/Payment/Payment';
-import Summary from './components/Summary/Summary';
-import FinalStatus from './components/FinalStatus/FinalStatus';
 
 const App = () => {
   return (
@@ -29,11 +27,10 @@ const App = () => {
         <Routes> 
           <Route path="" element={<Products/>} />
 
-          <Route path="payment" element={<Payment />} />
-
-          <Route path="summary" element={<Summary />} />
+          <Route path="payment" element={<Payment onClose={function (): void {
+            throw new Error('Function not implemented.');
+          } } />} />
           
-          <Route path="final-status" element={<FinalStatus />} />
         </Routes>
       </div>
     </Router>
