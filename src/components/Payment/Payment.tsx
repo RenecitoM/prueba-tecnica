@@ -71,6 +71,7 @@ const Payment: React.FC<PaymentProps> = ({ onClose }) => {
               value={cardNumber}
               onChange={handleCardNumberChange}
             />
+            <Form.Label className='mt-2 text-muted'>Valid card example <b>5454545454545454</b></Form.Label>
           </Form.Group>
         </Form>
       </Modal.Body>
